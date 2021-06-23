@@ -1,0 +1,19 @@
+web
+
+lb 
+
+cd /usr/local/nginx
+
+node 
+
+cd /var/website/html
+
+activities log
+
+cd /home/mncnow/mncnow
+var/log/activities/vplus-activity-api7.log
+
+uwsgi log
+
+cd /home/mncnow/mncnow
+var/log/uwsgi.log
