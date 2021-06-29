@@ -1,0 +1,18 @@
+10.10.20.253
+
+cd /etc/named
+cat mncnow.id.static.zone
+
+;api.mncnow.id.        IN      A    10.10.19.68
+api.mncnow.id.          IN      A   202.147.193.153
+;api.mncnow.id.        IN      A    202.147.193.154
+;api.mncnow.id.          IN      A   202.147.193.155
+;api.mncnow.id.        IN      A    103.84.8.51
+izzy.mncnow.id.       IN      A    10.10.19.241
+;static.mncnow.id.     IN      A           202.147.193.156
+;static.mncnow.id.      IN      A       202.147.193.151
+
+Noted !!!
+Nah kalo script kan kalo komentar dikasih #pager ya didepan
+Kalo dns itu comment  pake titik koma wan
+Abis ubah terus systemctl reload named
