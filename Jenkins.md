@@ -18,4 +18,15 @@ new node masukan ip  server b dan pilih permanent agent
 jalanin launch agent java
 kalau tidak ada tanda x node tidak berjalan
 
-setelah itu buat jobs jenkins baik freestyle ataupun pipeliine
+setelah itu buat jobs jenkins baik freestyle ataupun pipeline
+isi configure, di build trigger ceklis gitlab webhook dan url nya masukan di gitlab integration allyoucaneat dan juga generate tokennya habis itu ceklis push event
+testing build now trigger
+
+di server b  install npm, node js, quasar/cli, pm2 (untuk web)
+
+sudo apt install npm
+sudo apt install nodejs
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
