@@ -8,3 +8,6 @@ edit file
 
 contoh command untuk mengulang hello world setiap 2 menit
 */02 * * * * echo hello world
+
+untuk check crontabnnya jalan atau tidak
+sudo tail -f /var/log/syslog
