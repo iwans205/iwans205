@@ -1,0 +1,11 @@
+new item
+
+create nama jobsnya
+
+copy dari yang sudah ada di contoh adalah test pipeline
+
+setelah itu integrasi url webhook di allyoucaneat beserta generate token barunya
+
+setelah itu isi push eventnya branch atau develop dan ceklis merge requestnya
+
+setelah itu add webhook
