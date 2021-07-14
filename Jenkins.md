@@ -22,6 +22,23 @@ setelah itu buat jobs jenkins baik freestyle ataupun pipeline
 isi configure, di build trigger ceklis gitlab webhook dan url nya masukan di gitlab integration allyoucaneat dan juga generate tokennya habis itu ceklis push event
 testing build now trigger
 
+di server b di cd /var/jenkins/workspace/(nama job)
+vim .git/config
+
+tambahkan ini :
+sshCommand = ssh -i /home/iwan/.ssh/iwan-test -p 45817
+
+sehingga menjadi ini :
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        sshCommand = ssh -i /home/iwan/.ssh/iwan-test -p 45817
+[remote "origin"]
+        url = ssh://git@allyoucaneat.visionplus.id:45817/website/html5.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+
 di server b  install npm, node js, quasar/cli, pm2 (untuk web)
 
 sudo apt install npm
