@@ -10,7 +10,25 @@ setelah itu isi push eventnya branch atau develop dan ceklis merge requestnya
 
 setelah itu add webhook
 
-setelah itu configure berikut scriptnya :
+di server node cd /var/jenkins/workspace/(nama jobs)
+terus vim .git/config
+
+tambahkan ini :
+sshCommand = ssh -i /home/iwan/.ssh/iwan-test -p 45817
+
+sehingga menjadi ini :
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        sshCommand = ssh -i /home/iwan/.ssh/iwan-test -p 45817
+[remote "origin"]
+        url = ssh://git@allyoucaneat.visionplus.id:45817/website/html5.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+
+
+setelah itu configure script di jenkins seperti berikut scriptnya :
 
 pipeline {
    agent {label 'webtest-10.10.19.239'}
