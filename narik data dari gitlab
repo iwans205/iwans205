@@ -1,0 +1,15 @@
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        sshCommand = ssh -i /home/mncnow/.ssh/id_rsa_widget_staging -p 45817
+[remote "origin"]
+        url = ssh://git@allyoucaneat.visionplus.id:45817/website/widget-okezone.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+[branch "staging"]
+        remote = origin
+        merge = refs/heads/staging
