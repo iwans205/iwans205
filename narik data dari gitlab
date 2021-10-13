@@ -1,3 +1,6 @@
+rsa ssh-keygen -t rsa -b 4096
+
+
 [core]
         repositoryformatversion = 0
         filemode = true
