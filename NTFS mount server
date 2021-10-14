@@ -1,0 +1,43 @@
+misal ip 10.10.19.239 server
+misal ip 10.10.19.224 client
+misal isi folder test yang ini di mount
+
+#di 10.10.19.239 server
+sudo apt update
+sudo apt install nfs-kernel-server
+
+#di 10.10.19.224 client
+sudo apt update
+sudo apt install nfs-common
+
+#server#
+
+#di server buat folder/file yang ingin di mount
+sudo mkdir /var/test -p
+touch test.txt
+
+#setelah itu konfigurasi file exports
+sudo nano /etc/exports
+
+#isi sebagai berikut
+/var/test    10.10.19.224(rw,sync,no_root_squash,no_subtree_check)
+
+#setelah itu
+sudo systemctl restart nfs-kernel-server
+
+#cek firewall
+sudo ufw status
+
+#client#
+#cek firewall lagi
+sudo ufw status
+
+#buat folder yang ingin di mount
+sudo mkdir /var/test
+
+#lalu mount
+sudo mount 10.10.19.239:/var/test /var/test
+
+#setelah itu cek
+df -h
+
