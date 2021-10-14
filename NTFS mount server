@@ -41,3 +41,5 @@ sudo mount 10.10.19.239:/var/test /var/test
 #setelah itu cek
 df -h
 
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-18-04
