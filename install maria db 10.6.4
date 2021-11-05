@@ -1,0 +1,20 @@
+sudo apt update && sudo apt upgrade -y
+sudo apt-get install curl software-properties-common dirmngr -y
+sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mariadb.mirror.liquidtelecom.com/repo/10.6/ubuntu focal main'
+sudo apt update
+sudo apt install mariadb-server mariadb-client
+systemctl status mariadb
+
+sudo mysql_secure_installation
+sudo mysql
+GRANT ALL ON *.* TO 'mncnow'@'10.10.19.136' IDENTIFIED BY 'password' WITH GRANT OPTION;
+GRANT ALL ON *.* TO 'mncnow'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+GRANT ALL ON *.* TO 'root'@'10.10.19.136' IDENTIFIED BY 'password' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit
+
+login sql
+
+mysql -u login1 -h 10.10.24.181 -p
+mysql -u mncnow -p
