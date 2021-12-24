@@ -1,0 +1,19 @@
+create container
+
+docker run -it ubuntu sh
+
+docker run -it (container) sh (sh=shell script)
+
+docker ps (untuk melihat docker yang sedang berjalan)
+
+docker ps -a (untuk melihat semua docker yang pernah dijalanin)
+
+stop container yang berjalan 
+docker container stop 550f9b80bb0f (id container)
+
+docker container start 550f9b80bb0f
+
+Menjalankan kembali container yang telah dibuat
+docker exec -it 550f9b80bb0f sh
+
+docker rm 550f9b80bb0f (untuk menghapus container)
