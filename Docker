@@ -17,3 +17,10 @@ Menjalankan kembali container yang telah dibuat
 docker exec -it 550f9b80bb0f sh
 
 docker rm 550f9b80bb0f (untuk menghapus container)
+
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+(ada -e adalah environtment variable dan ada -d adalah menjalankan sebagai backgroud atau diamond)
+
+(docker images) untuk melihat image yang pernah di download
