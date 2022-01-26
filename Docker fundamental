@@ -16,3 +16,6 @@ containers lebih consistent environtment saat dev ke prod karena menggunakan ima
 
 - docker basic commands
 - put data to container
+
+docker build untuk menginstall aplikasi baru, membuat image baru yang sudah ada datanya, menginstal dan mengcompile codingnya
+docker compose membangun multiple images  atau run multiple container yang terhubung satu sama lain
