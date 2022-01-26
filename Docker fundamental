@@ -1,0 +1,18 @@
+- overview containers
+containers adalah standar unit dari software yang di package antara software dan dependency nya, 
+untuk deploy bisa lebih cepat, dan reliable dan prtable bisa dari satu environtment ke environtmen lain
+misalnya dari dev ke test ke prod menggunakan image yang sama jadi akan jalan semua
+
+
+- containers vs virtual machine
+
+container mengunakan size yang kecil sehingga portable untuk di deploy dengan cepat
+kecenderungan docker lebih efisien dari penggunaan storage dan memory
+
+vm memakan storage yang lebih besar karena setiap kali membuat vm harus menginstal os
+kelebihan vm adalah level securitynya lebih aman karena terisolasi/isolated karena berdiri masing - masing independent
+
+containers lebih consistent environtment saat dev ke prod karena menggunakan images yang sama
+
+- docker basic commands
+- put data to container
