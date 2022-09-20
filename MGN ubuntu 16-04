@@ -1,0 +1,12 @@
+install python3
+https://wpcademy.com/how-to-install-python-3-on-ubuntu-16-04-lts/
+
+clone repository
+wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-ap-southeast-3.s3.ap-southeast-3.amazonaws.com/latest/linux/aws-replication-installer-init.py
+
+sikaaaattt !!!
+sudo python3 aws-replication-installer-init.py --region ap-southeast-3
+
+user : MGNVPLUSuser
+access Key id : AKIAQ4Y7W5NN4KZ3MRUB 
+Secret access key : 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
