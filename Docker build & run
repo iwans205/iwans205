@@ -1,0 +1,2 @@
+docker build -t testpython(nama image) .
+docker run -it -d -p 8000:8000 testpython
