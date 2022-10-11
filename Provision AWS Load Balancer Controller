@@ -1,0 +1,78 @@
+6.1 Provision AWS Load Balancer Controller
+In this lab, we are going to deploy the AWS Load Balancer Controller  - which will be used to expose our applications externally.
+
+Use the following process to deploy the AWS Load Balancer Controller :
+
+Create an IAM OIDC provider and associate it with your cluster:
+1
+eksctl utils associate-iam-oidc-provider --cluster=mythicaleks-eksctl --approve
+
+Download the IAM policy for the AWS Load Balancer Controller
+1
+curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
+
+Create an IAM policy named AWSLoadBalancerControllerIAMPolicy to allow the AWS Load Balancer controller to make AWS API calls on your behalf and save the Policy.Arn into a new variable called PolicyARN:
+1
+2
+3
+4
+5
+6
+#create the policy
+aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam-policy.json
+
+#get the policy ARN
+export PolicyARN=$(aws iam list-policies --query 'Policies[?PolicyName==`AWSLoadBalancerControllerIAMPolicy`].Arn' --output text)
+echo $PolicyARN
+
+Tip
+It is a best practice to use IAM permissions directly on Pods instead of EC2 Instances. Learn more about IAM Roles for Service Accounts  in the Amazon EKS documentation.
+Create a Kubernetes service account and an IAM role (for the pod running the AWS Load Balancer Controller):
+1
+2
+3
+4
+5
+6
+7
+eksctl create iamserviceaccount \
+   --cluster=mythicaleks-eksctl \
+   --namespace=kube-system \
+   --name=aws-load-balancer-controller \
+   --attach-policy-arn=$PolicyARN \
+   --override-existing-serviceaccounts \
+   --approve
+
+What is this command doing?
+The command above uses eksctl to create a service account name aws-load-balancer-controller in the namespace kube-system. It will also create an IAM Role using the provided policy, and only allow the previously created service account to assume this role using the OpenID Connect endpoint of the EKS cluster.
+Deploy AWS Load Balancer Controller using its Helm Chart:
+
+a. Add the EKS repository to Helm:
+
+1
+helm repo add eks https://aws.github.io/eks-charts
+
+b. Install the TargetGroupBinding CRDs:
+
+1
+kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master"
+
+c. Install the AWS Load Balancer controller using the previously created service account:
+
+1
+2
+3
+4
+5
+helm upgrade -i aws-load-balancer-controller eks/aws-load-balancer-controller \
+  -n kube-system \
+  --set clusterName=mythicaleks-eksctl \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller
+
+Verify that the deployment was successful and the controller started:
+
+1
+2
+kubectl logs -n kube-system deployments/aws-load-balancer-controller
+kubectl -n kube-system get deployments
