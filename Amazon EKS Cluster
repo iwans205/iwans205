@@ -25,3 +25,8 @@ managedNodeGroups:
 #    enableTypes: ["*"]
 
 EOF
+
+####step selanjutnya####
+eksctl create cluster -f mythicaleks.yaml
+
+kubectl get nodes
