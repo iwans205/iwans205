@@ -1,0 +1,10 @@
+echo "- - -" > /sys/class/scsi_host/host0/scan
+echo "- - -" > /sys/class/scsi_host/host1/scan
+echo "- - -" > /sys/class/scsi_host/host2/scan
+fdisk -l
+pvcreate /dev/sdb1 (sesuai dengan dev/apa yang ada di fdisk -l)
+pvs
+vgextend centos /dev/sdb1 || vgextend ubuntu-vg /dev/sdb
+lvextend -l +100%FREE /dev/mapper/centos-root || lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+xfs_growfs -d /dev/mapper/centos-root || sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv
+df -h
