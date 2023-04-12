@@ -1,0 +1,34 @@
+#!/bin/bash
+adduser iwan
+adduser radja
+adduser fandi
+adduser kris
+adduser usman
+adduser abdul
+cp -r /home/mncnow/.ssh/ /home/iwan/
+cp -r /home/mncnow/.ssh/ /home/radja/
+cp -r /home/mncnow/.ssh/ /home/fandi/
+cp -r /home/mncnow/.ssh/ /home/kris/
+cp -r /home/mncnow/.ssh/ /home/usman/
+cp -r /home/mncnow/.ssh/ /home/abdul/
+truncate -s 0 /home/iwan/.ssh/authorized_keys
+truncate -s 0 /home/radja/.ssh/authorized_keys
+truncate -s 0 /home/fandi/.ssh/authorized_keys
+truncate -s 0 /home/kris/.ssh/authorized_keys
+truncate -s 0 /home/usman/.ssh/authorized_keys
+truncate -s 0 /home/abdul/.ssh/authorized_keys
+echo -e 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOil424vEyx3FB74E8VDl8r2oUJR2hAU2XWf2r2iZCRWi15qKQ1NGr5izN05uklJbKBPgGslyYwN033zPxQwe03s2b9UIcJYk9tkosHjBi482OZTpCEVfGeX7m6Wld5Hdu8GNEh8SnI1k+AkmQzrsVUNH+NWwpnSE33pnt7WJaIm/HptDMXAFWELFLAYDDYleAEankvTo3k+dFItc+zgh8xW87XYJc5g2sd8I89MMeuzJbDnH9Ynsnv7/nbSNVjkC1e7qdAHxv4iLKiIHheEM9N7QMBk6SVbqI908eWY2Ill8q21HubQVhUqAGLaDJw8ejoQL7r8Q1nyjhtMpx9GFUuMheYYxkSnSQg3L3tKaRYW36XJ7ki0pg61k4xUTPKyp9K/lzWRHj8n2SfTrkvUDFWICBJLOW004+WcyMmma76LUJYAct394PAO2k49HYEYmwWdpD43nOsjG4J3bsVas3qjJGm+SYAlvZJm4ap4Ol1/zrv8CUAKfLuKXB7D+0HJ0= itm@DESKTOP-E923MPI' >> /home/iwan/.ssh/authorized_keys
+echo -e 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwjJd57i8hWtAk1YW4QbiwOzFeohqs5KlzAvd0msVtDBa2sDIxj0iBUnsojIhQgYwWqgsTi2xbSW+mcsL4g3kLx2KUZXpR44j5weg+eDnYgnxGZBFm8+cZseRWkC/N496xr0dEzhnn+op1n+UT+gXJzxSgjZynIDzxNNsgaj+EcDYXkE0IeUwKvuNLuUBbi1577dhJCOULp1OftsgqQnYHkpbnb+AEBeRRn3yh3Xop5oFegJWnJ9O0SOogUm4sYY6sLLQHpHYPix5PBJewhCtBvzxBIbpK/1jDMyV7IVEGOy0mdbooIekQoUxadAChtisfVJHbgQyPSW9UN1xLG/8Kw== Radja@Xshell' >> /home/radja/.ssh/authorized_keys
+
+echo -e 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWB+XOUpQgZNaZP4aFZRI183LsFigROgrx/A6/btZ4pGxUztQkDFxYgjZ8kt2olNc/RNwYZyT8lTVdi63d5WHehMDW6bno2U6dERC8Oibfal3Ker++p9I1KqYllupP0g+CdvOSjFxX2fKNWXR/FW7K5+qZeQrl4/aNYjxDuPkcuCcyAtNAq1NbFbA9QDosaIynjAsSbwYtzSMEyKvdIa0yHHjxV1W+r+OA7xSbIKUY8zX1HBq6Tzo8mfa1nYcRn67P4OdhPytO1PknyTwCd0QLDjOLwHFZBjKVhyTKaHgqzBey1IBBuv27l3U3VyschicpQVwS7uIBFiLPCCQaPV9R fandikurnia@localhost.localdomain' >> /home/fandi/.ssh/authorized_keys
+
+echo -e 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRhVy0y9I2com/Dpi5GLS+0Ajy50ZedtoqjRmmygsoijQzbisl1wgHugYN4Ea8UsLt1ZMT/t4neSYSvjigfL3YpIZBsfnxxlEdrkALR5Ngp4Lm6uV3qAI9JGEqiG0szQ3XrQW150M2yvkVKn/Zx9fjy0sCX7+NvdZ3vqALNJ4Bv2uU3FfmEwUgW2eInTpahWaBytFes2vYodrUCaIWCwwEWZxDH4Psi6Fi0Es1w5bw6oX8KsiRIBlFW363suE5+TDaTRCxMtmQPnE54Yuzhcs597QMlhdvIbTh7eV55g4DsDwGe6DVAF5rLELXat+hNWv1oXuzAKe/xuCdoTBur+DUgEVvQpo0Rsqr8Iwbms49PYxRZC6v+D3WYfVElcqqqkRz4QQDiTSsBAYRPfUphk7W/4iSLtofqA24OQH2oNkCYHzXaqEJ5gannxpq3kjVteZtLP4H/+TiNRQROrFgl15/beRC56pd8KUvXt+8CdyMPITIh+BbSyLvUw5O9G4XyHMtNUUK1KO7MPi2XsA04H9iuhx1CTv1LCRUyefV9GGYj5VdEsmuwY/ZyO0rVutRh7tZhu9jP3FqXM71d41K0xAvexsDLLEov83mCKVxeXyqshkjCJ5P3ga5fbRp2xw5oqUcEWygurAavwom+rsNMiHe2pva+zq0+TKcIIDYMEWutQ== kristiono.setyadi@gmail.com
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnL7vsXWTQEdg0thmvye8zQ0mfU85A1Y4poDc3Ox0F3JxNqTXTZgW2gGhT6mUKgIpR+W/VJC+lZ3Ip0oAmPYPELDLWWGN55O2ZIFxalHpDftnBfQMC0EzNxSdtvEa9LM32JoU2KN7nCjtafQvQ/n3gITnLaZfPmpwdxIrm2YkJb12wCcWv17chMYugHpL5Il/dm8a60S4TO1vWheMHJux55LiR4URNzc9KNstYAgD4ljNIN4GU76RNs6JBiuuUaIdwssF/Yi2VB0xn5ZTnLyQvgB3k0PdMGguYFNNJsFmj1Kp99OnFLj1dTB9IH2eQJUTLgMFuuBnUfHuiz1eE4g1gZmKvLtpKAxzjeS04b6Ld+Vje9lgpJAZFCYqic5F7sW9NGNTCwWiBLk8rA6ToF4TYJQeYL4UIVDoyXitR6698vZi5smi2833gVRruGPSuwA7xxn8QroUglJg5OosRion1LnhT0KsuIwhnE3hWDKHgIyfYVw6u5GmT6W4oOIszWps= ksetyadi@lenovo.local' >> /home/kris/.ssh/authorized_keys
+
+
+chown -R iwan:iwan iwan/
+chown -R radja:radja radja/
+chown -R fandi:fandi fandi/
+chown -R kris:kris kris/
+chown -R usman:usman usman/
+chown -R abdul:abdul abdul/
