@@ -10,3 +10,12 @@ sudo python3 aws-replication-installer-init.py --region ap-southeast-3
 user : MGNVPLUSuser
 access Key id : AKIAQ4Y7W5NN4KZ3MRUB 
 Secret access key : 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
+
+
+cara create user untuk MGN :
+- create user
+- kasih permission :
+- AWSApplicationMigrationAgentInstallationPolicy
+- AWSApplicationMigrationAgentPolicy
+- AWSApplicationMigrationAgentPolicy_v2
+- AWSCompromisedKeyQuarantineV2
