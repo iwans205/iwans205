@@ -1,3 +1,5 @@
 - create subnet group
 - create replication
 - create endpoint source
+- create endpoint target
+- create database migration task
