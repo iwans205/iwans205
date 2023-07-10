@@ -1,0 +1,5 @@
+Proxyasql
+use main
+select * from mysql_servers ;
+INSERT INTO mysql_servers (hostgroup_id, hostname, port) VALUES (0, '10.10.24.176', 3306), (1, '10.10.24.176', 3306);
+delete from mysql_servers where hostname = '10.10.128.232' and hostgroup_id between '0' and '1';
