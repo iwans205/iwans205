@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Start a new screen session
+screen -dmS my_session_name
+
+# Send a command to the screen session
+screen -S my_session_name -X stuff "command_to_run_in_screen$(printf \\r)"
+
+# Sleep for a few seconds to allow the command to run
+sleep 10
+
+# Cancel the command by sending an interrupt signal
+screen -S my_session_name -X stuff $'\003'  # Send Ctrl+C
+
+# Sleep again to allow the command to respond to Ctrl+C
+sleep 2
+
+# Terminate the screen session
+screen -S my_session_name -X quit
