@@ -1,0 +1,19 @@
+global:
+ scrape_interval: 10s
+
+scrape_configs:
+ - job_name: 'prometheus-metrics'
+   scrape_interval: 10s
+   static_configs:
+      - targets: ['localhost:9090']
+ - job_name: 'aws-autoscaling-nodes'
+   ec2_sd_configs:
+      - region: ap-southeast-3
+        access_key: AKIAQ4Y7W5NNQ5KDKMUW
+        secret_key: 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
+        port: 9100
+        refresh_interval: 60s
+   relabel_configs:
+      - source_labels: [__meta_ec2_tag_prometheus_node_exporter]
+        regex: true
+        action: keep
