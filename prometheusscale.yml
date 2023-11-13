@@ -17,3 +17,24 @@ scrape_configs:
       - source_labels: [__meta_ec2_tag_prometheus_node_exporter]
         regex: true
         action: keep
+
+
+        Launch template version details
+Actions
+Delete template version
+Version
+
+8 (Default)
+Description
+Update ami after install node_exporter v.1.6.1 for monitoring
+Date created
+2023-11-11T17:35:27.000Z
+Created by
+arn:aws:iam::061806668635:user/alif
+
+Launch Template -> details 
+
+Tags (1)
+
+Key | Value | Tag instances | Tag volumes | Tag elastic graphics | Tag spot instance requests |
+prometheus-node-exporter	| true	| Yes	|No |	No	| No |
